@@ -21,7 +21,7 @@ app.get("/", (req, res) =>
   <script src='${scriptUrl}'></script>
   <script>
     loadPlayer({
-      url: "ws://localhost/8080/api/stream",
+      url: "ws://rtsp.vercel.app//${PORT}/api/stream",
       canvas: document.getElementById('canvas')
     });
   </script>
