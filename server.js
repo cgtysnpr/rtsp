@@ -16,12 +16,20 @@ app.ws("/api/stream", handler);
 // this is an example html page to view the stream
 app.get("/", (req, res) =>
   res.send(`
+  <div
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100vh",
+  }}
+>
   <canvas id='canvas'></canvas>
-
+</div>
   <script src='${scriptUrl}'></script>
   <script>
     loadPlayer({
-      url: "ws://rtsp.vercel.app//${PORT}/api/stream",
+      url: "ws://rtsp.vercel.app:${PORT}/api/stream",
       canvas: document.getElementById('canvas')
     });
   </script>
