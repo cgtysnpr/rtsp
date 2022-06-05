@@ -16,7 +16,7 @@
     "start-js": "react-scripts start",
     "backend-start": "node server.js",
     "start": "\"npm-run-all -p backend-start start-js\"",
-    "build": "\"npm-run-all -p backend-start build-js\"",
+    "build": "react-scripts build",
     "build-js": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
