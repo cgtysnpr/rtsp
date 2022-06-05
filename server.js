@@ -9,7 +9,7 @@ const handler = proxy({
   verbose: false,
   transport: "tcp",
 });
-
+const PORT = process.env.PORT || 8080;
 // the endpoint our RTSP uses
 app.ws("/api/stream", handler);
 
@@ -21,11 +21,11 @@ app.get("/", (req, res) =>
   <script src='${scriptUrl}'></script>
   <script>
     loadPlayer({
-      url: 'ws://https://rtsp.vercel.app/2000/api/stream',
+      url: "ws://rtsp.vercel.app/${PORT}/api/stream",
       canvas: document.getElementById('canvas')
     });
   </script>
 `)
 );
 
-app.listen(2000);
+app.listen(PORT);
