@@ -3,10 +3,10 @@ import ReactDOM from "react-dom";
 import { loadPlayer } from "rtsp-relay/browser";
 
 function App() {
-  const PORT = process.env.PORT || 8080;
+  const PORT = process.env.PORT || 2000;
   useEffect(() => {
     loadPlayer({
-      url: `ws://rtsp.vercel.app:${PORT}/api/stream`,
+      url: `ws://localhost:${PORT}/api/stream`,
       canvas: document.getElementById("canvas"),
     });
   }, []);
